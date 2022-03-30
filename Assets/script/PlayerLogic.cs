@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PlayerLogic : MonoBehaviour
 
     [SerializeField]
     AudioClip m_coinSound;
+    [SerializeField]
+    AudioClip m_victory;
 
     [SerializeField]
     Text m_ammoText;
@@ -33,6 +36,8 @@ public class PlayerLogic : MonoBehaviour
     int jumplevel;
 
     int jumpstatement;
+
+    int victory=0;
 
 
     int score;
@@ -128,6 +133,15 @@ public class PlayerLogic : MonoBehaviour
             GRAVITY=0.9f;
 
         }
+        if(other.tag == "Finish")
+        {
+            if(victory==0){
+                victory=1;
+                m_audioSource.PlayOneShot(m_victory);
+                Invoke("QuitGame",6f);
+            }
+
+        }
     }
 
 
@@ -159,5 +173,9 @@ public class PlayerLogic : MonoBehaviour
     void UpdateAmmoText()
     {
         m_ammoText.text = "Score: " + score;
+    }
+    void QuitGame(){
+        UnityEditor.EditorApplication.isPlaying=false;
+        Application.Quit();
     }
 }

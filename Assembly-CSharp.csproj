@@ -39,9 +39,12 @@
      <Compile Include="Assets\script\PlayerLogic.cs" />
      <Compile Include="Assets\script\Deathlogic.cs" />
      <Compile Include="Assets\script\coinlogic.cs" />
+     <Compile Include="Assets\script\gravitationlogic.cs" />
      <Compile Include="Assets\script\CheckLoadLogic.cs" />
      <Compile Include="Assets\script\cameralogic.cs" />
      <Compile Include="Assets\script\GameManager.cs" />
+     <Compile Include="Assets\script\boardlogic1.cs" />
+     <Compile Include="Assets\script\boardlogic2.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\UnityEditor\2020.3.29f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
